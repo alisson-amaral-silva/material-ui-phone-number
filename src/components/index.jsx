@@ -14,6 +14,7 @@ import {
   head, tail, debounce, memoize, trim, startsWith, isString,
 } from 'lodash';
 import countryData from '../country_data';
+import * as S from './styled';
 import Item from './Item';
 
 const styles = () => ({
@@ -52,7 +53,7 @@ class MaterialUiPhoneNumber extends React.Component {
   flags = {};
 
   guessSelectedCountry = memoize((inputNumber, onlyCountries, defaultCountry) => {
-    const secondBestGuess = find(onlyCountries, { iso2: defaultCountry }) || {};
+    const secondBestGuess = find(onlyCountries, { code: defaultCountry }) || {};
     if (trim(inputNumber) === '') return secondBestGuess;
 
     const bestGuess = reduce(onlyCountries, (selectedCountry, country) => {
@@ -73,16 +74,13 @@ class MaterialUiPhoneNumber extends React.Component {
 
   constructor(props) {
     super(props);
-    let filteredCountries = countryData.allCountries;
-
-    if (props.disableAreaCodes) filteredCountries = this.deleteAreaCodes(filteredCountries);
-    if (props.regions) filteredCountries = this.filterRegions(props.regions, filteredCountries);
+    let filteredCountries = !!props.countryList.length ? props.countryList : countryData.allCountries;
 
     const onlyCountries = this.excludeCountries(
       this.getOnlyCountries(props.onlyCountries, filteredCountries), props.excludeCountries,
     );
 
-    const preferredCountries = filter(filteredCountries, (country) => some(props.preferredCountries, (preferredCountry) => preferredCountry === country.iso2));
+    const preferredCountries = filter(filteredCountries, (country) => some(props.preferredCountries, (preferredCountry) => preferredCountry === country.code));
 
     const inputNumber = props.value || '';
 
@@ -92,13 +90,13 @@ class MaterialUiPhoneNumber extends React.Component {
       countryGuess = this.guessSelectedCountry(inputNumber.replace(/\D/g, '').substring(0, 6), onlyCountries, props.defaultCountry) || 0;
     } else if (props.defaultCountry) {
       // Default country
-      countryGuess = find(onlyCountries, { iso2: props.defaultCountry }) || 0;
+      countryGuess = find(onlyCountries, { code: props.defaultCountry }) || 0;
     } else {
       // Empty params
       countryGuess = 0;
     }
 
-    const countryGuessIndex = findIndex(this.allCountries, countryGuess);
+    const countryGuessIndex = findIndex(filteredCountries, countryGuess);
     const dialCode = (
       inputNumber.length < 2
       && countryGuess
@@ -123,6 +121,7 @@ class MaterialUiPhoneNumber extends React.Component {
       freezeSelection: false,
       debouncedQueryStingSearcher: debounce(this.searchCountry, 100),
       anchorEl: null,
+      iconClicked: false
     };
   }
 
@@ -166,37 +165,22 @@ class MaterialUiPhoneNumber extends React.Component {
   getOnlyCountries = (onlyCountriesArray, filteredCountries) => {
     if (onlyCountriesArray.length === 0) return filteredCountries;
 
-    return filteredCountries.filter((country) => onlyCountriesArray.some((element) => element === country.iso2));
+    return filteredCountries.filter((country) => onlyCountriesArray.some((element) => element === country.code));
   }
 
   excludeCountries = (selectedCountries, excludedCountries) => {
     if (excludedCountries.length === 0) {
       return selectedCountries;
     }
-    return filter(selectedCountries, (selCountry) => !includes(excludedCountries, selCountry.iso2));
+    return filter(selectedCountries, (selCountry) => !includes(excludedCountries, selCountry.code));
   }
-
-  filterRegions = (regions, filteredCountries) => {
-    if (typeof regions === 'string') {
-      const region = regions;
-      return filteredCountries.filter((country) => country.regions.some((element) => element === region));
-    }
-
-    return filteredCountries.filter((country) => {
-      const matches = regions.map((region) => country.regions.some((element) => element === region));
-      return matches.some((el) => el);
-    });
-  }
-
-  // Countries array methods
-  deleteAreaCodes = (filteredCountries) => filteredCountries.filter((country) => country.isAreaCode !== true);
 
   // Hooks for updated props
   updateDefaultCountry = (country) => {
     const { onlyCountries } = this.state;
     const { disableCountryCode } = this.props;
 
-    const newSelectedCountry = find(onlyCountries, { iso2: country });
+    const newSelectedCountry = find(onlyCountries, { code: country });
 
     this.setState({
       defaultCountry: country,
@@ -295,7 +279,7 @@ class MaterialUiPhoneNumber extends React.Component {
     return {
       name: selectedCountry.name || '',
       dialCode: selectedCountry.dialCode || '',
-      countryCode: selectedCountry.iso2 || '',
+      countryCode: selectedCountry.code || '',
     };
   }
 
@@ -412,8 +396,9 @@ class MaterialUiPhoneNumber extends React.Component {
     const { formattedNumber, selectedCountry, onlyCountries } = this.state;
     const { onChange } = this.props;
 
+
     const currentSelectedCountry = selectedCountry;
-    const nextSelectedCountry = isString(country) ? find(onlyCountries, (countryItem) => countryItem.iso2 === country) : find(onlyCountries, country);
+    const nextSelectedCountry = isString(country) ? find(onlyCountries, (countryItem) => countryItem.code === country) : find(onlyCountries, country);
 
     const unformattedNumber = formattedNumber.replace(' ', '').replace('(', '').replace(')', '').replace('-', '');
     const newNumber = unformattedNumber.length > 1 ? unformattedNumber.replace(currentSelectedCountry.dialCode, nextSelectedCountry.dialCode) : nextSelectedCountry.dialCode;
@@ -552,6 +537,20 @@ class MaterialUiPhoneNumber extends React.Component {
     }
   }
 
+  handleOpenDropDown = (e) => {
+    this.setState({
+      anchorEl: e.currentTarget,
+      iconClicked: true
+     })
+  }
+
+  handleCloseDropDown = () => {
+    this.setState({
+      anchorEl: null,
+      iconClicked: false
+    })
+  }
+
   checkIfValid = () => {
     const { formattedNumber } = this.state;
     const { isValid } = this.props;
@@ -570,7 +569,7 @@ class MaterialUiPhoneNumber extends React.Component {
     // if inputNumber does not start with '+', then use default country's dialing prefix,
     // otherwise use logic for finding country based on country prefix.
     if (!inputNumber.startsWith('+')) {
-      countryGuess = find(onlyCountries, { iso2: defaultCountry });
+      countryGuess = find(onlyCountries, { code: defaultCountry });
       const dialCode = countryGuess && !startsWith(inputNumber.replace(/\D/g, ''), countryGuess.dialCode) ? countryGuess.dialCode : '';
       formattedNumber = this.formatNumber(
         (disableCountryCode ? '' : dialCode) + inputNumber.replace(/\D/g, ''),
@@ -603,7 +602,7 @@ class MaterialUiPhoneNumber extends React.Component {
 
     const isSelected = (country) => Boolean(selectedCountry && selectedCountry.dialCode === country.dialCode);
 
-    const FlagComponent = Flags[selectedCountry.iso2.toUpperCase()];
+    const FlagComponent = Flags[selectedCountry.code.toUpperCase()];
 
     const dropdownProps = disableDropdown ? {} : {
       startAdornment: (
@@ -628,12 +627,12 @@ class MaterialUiPhoneNumber extends React.Component {
               >
                 {!!preferredCountries.length && map(preferredCountries, (country, index) => (
                   <Item
-                    key={`preferred_${country.iso2}_${index}`}
+                    key={`preferred_${country.code}_${index}`}
                     itemRef={(node) => {
                       this.flags[`flag_no_${index}`] = node;
                     }}
                     name={country.name}
-                    iso2={country.iso2}
+                    code={country.code}
                     dialCode={country.dialCode}
                     localization={localization && localization[country.name]}
                     native
@@ -642,12 +641,12 @@ class MaterialUiPhoneNumber extends React.Component {
 
                 {map(onlyCountries, (country, index) => (
                   <Item
-                    key={`preferred_${country.iso2}_${index}`}
+                    key={`preferred_${country.code}_${index}`}
                     itemRef={(node) => {
                       this.flags[`flag_no_${index}`] = node;
                     }}
                     name={country.name}
-                    iso2={country.iso2}
+                    code={country.code}
                     dialCode={country.dialCode}
                     localization={localization && localization[country.name]}
                     native
@@ -662,7 +661,7 @@ class MaterialUiPhoneNumber extends React.Component {
                   className={classes.flagButton}
                   aria-owns={anchorEl ? 'country-menu' : null}
                   aria-label="Select country"
-                  onClick={(e) => this.setState({ anchorEl: e.currentTarget })}
+                  onClick={this.handleOpenDropDown}
                   aria-haspopup
                 >
                   {Boolean(FlagComponent) && <FlagComponent className="margin" />}
@@ -673,18 +672,18 @@ class MaterialUiPhoneNumber extends React.Component {
                   id="country-menu"
                   anchorEl={anchorEl}
                   open={Boolean(anchorEl)}
-                  onClose={() => this.setState({ anchorEl: null })}
+                  onClose={this.handleCloseDropDown}
                 >
                   {!!preferredCountries.length && map(preferredCountries, (country, index) => (
                     <Item
-                      key={`preferred_${country.iso2}_${index}`}
+                      key={`preferred_${country.code}_${index}`}
                       itemRef={(node) => {
                         this.flags[`flag_no_${index}`] = node;
                       }}
                       selected={isSelected(country)}
                       onClick={() => this.handleFlagItemClick(country)}
                       name={country.name}
-                      iso2={country.iso2}
+                      code={country.code}
                       dialCode={country.dialCode}
                       localization={localization && localization[country.name]}
                       className={classes.flagIcon}
@@ -695,14 +694,14 @@ class MaterialUiPhoneNumber extends React.Component {
 
                   {map(onlyCountries, (country, index) => (
                     <Item
-                      key={`preferred_${country.iso2}_${index}`}
+                      key={`preferred_${country.code}_${index}`}
                       itemRef={(node) => {
                         this.flags[`flag_no_${index}`] = node;
                       }}
                       selected={isSelected(country)}
                       onClick={() => this.handleFlagItemClick(country)}
                       name={country.name}
-                      iso2={country.iso2}
+                      code={country.code}
                       dialCode={country.dialCode}
                       localization={localization && localization[country.name]}
                       className={classes.flagIcon}
@@ -711,6 +710,7 @@ class MaterialUiPhoneNumber extends React.Component {
                 </Menu>
               </>
             )}
+            {this.state.iconClicked ?  <S.ExpandLessIconWrapper /> : <S.ExpandMoreIconWrapper onClick={this.handleOpenDropDown} />}
         </InputAdornment>
       ),
     };
@@ -726,7 +726,7 @@ class MaterialUiPhoneNumber extends React.Component {
     const {
       // start placeholder props
       native, defaultCountry, excludeCountries, onlyCountries, preferredCountries,
-      dropdownClass, autoFormat, disableAreaCodes, isValid, disableCountryCode,
+      dropdownClass, autoFormat, isValid, disableCountryCode,
       disableDropdown, enableLongNumbers, countryCodeEditable, onEnterKeyPress,
       isModernBrowser, classes, keys, localization, placeholder, regions, onChange,
       value,
@@ -766,6 +766,7 @@ MaterialUiPhoneNumber.propTypes = {
   excludeCountries: PropTypes.arrayOf(PropTypes.string),
   onlyCountries: PropTypes.arrayOf(PropTypes.string),
   preferredCountries: PropTypes.arrayOf(PropTypes.string),
+  countryList: PropTypes.arrayOf(PropTypes.object),
   defaultCountry: PropTypes.string,
 
   value: PropTypes.string,
@@ -782,7 +783,6 @@ MaterialUiPhoneNumber.propTypes = {
   inputRef: PropTypes.func,
 
   autoFormat: PropTypes.bool,
-  disableAreaCodes: PropTypes.bool,
   disableCountryCode: PropTypes.bool,
   disableDropdown: PropTypes.bool,
   enableLongNumbers: PropTypes.bool,
@@ -810,6 +810,7 @@ MaterialUiPhoneNumber.propTypes = {
 MaterialUiPhoneNumber.defaultProps = {
   excludeCountries: [],
   onlyCountries: [],
+  countryList: [],
   preferredCountries: [],
   defaultCountry: '',
 
@@ -823,7 +824,6 @@ MaterialUiPhoneNumber.defaultProps = {
   dropdownClass: '',
 
   autoFormat: true,
-  disableAreaCodes: false,
   isValid: (inputNumber) => some(countryData.allCountries, (country) => startsWith(inputNumber, country.dialCode) || startsWith(country.dialCode, inputNumber)),
   disableCountryCode: false,
   disableDropdown: false,

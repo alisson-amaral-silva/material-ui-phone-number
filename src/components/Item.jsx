@@ -7,7 +7,7 @@ class Item extends React.PureComponent {
   render() {
     const ref = React.createRef();
     const {
-      name, iso2, dialCode, localization,
+      name, code, dialCode, localization,
       itemRef, native, className = '', ...restProps
     } = this.props;
 
@@ -16,8 +16,8 @@ class Item extends React.PureComponent {
         <option
           className="country"
           data-dial-code="1"
-          data-country-code={iso2}
-          value={iso2}
+          data-country-code={code}
+          value={code}
           {...restProps}
         >
           {localization || name}
@@ -27,14 +27,14 @@ class Item extends React.PureComponent {
       );
     }
 
-    const FlagComponent = Flags[iso2.toUpperCase()];
+    const FlagComponent = Flags[code.toUpperCase()];
 
     return (
       <MenuItem
         ref={ref}
         className="country"
         data-dial-code="1"
-        data-country-code={iso2}
+        data-country-code={code}
         {...restProps}
       >
         {Boolean(FlagComponent) && (
@@ -55,7 +55,7 @@ class Item extends React.PureComponent {
 
 Item.propTypes = {
   name: PropTypes.string.isRequired,
-  iso2: PropTypes.string.isRequired,
+  code: PropTypes.string.isRequired,
   dialCode: PropTypes.string.isRequired,
   itemRef: PropTypes.func.isRequired,
   localization: PropTypes.string,

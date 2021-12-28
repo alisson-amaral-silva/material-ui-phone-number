@@ -69,11 +69,6 @@ export default render(
       <MaterialUiPhoneNumber
         value="+3802343252"
       />
-      <p>Disabled area codes with disableAreaCodes</p>
-      <MaterialUiPhoneNumber
-        defaultCountry="us"
-        disableAreaCodes
-      />
       <p>Disabled flag by default</p>
       <p>Customizable placeholder</p>
     </div>
@@ -82,37 +77,10 @@ export default render(
       display: 'inline-block', marginLeft: '40px', verticalAlign: 'top', marginTop: '35px',
     }}
     >
-      <p>
-        Custom region selected:
-        {' '}
-        {'{\'europe\'}'}
-      </p>
-      <MaterialUiPhoneNumber
-        defaultCountry="it"
-        regions="europe"
-      />
-      <p>
-        Custom regions selected:
-        {' '}
-        {'{[\'north-america\', \'carribean\']}'}
-      </p>
-      <MaterialUiPhoneNumber
-        defaultCountry="ca"
-        regions={['north-america', 'carribean']}
-      />
       <p>Disabled dropdown</p>
       <MaterialUiPhoneNumber
         onlyCountries={['us']}
         defaultCountry="us"
-        disableDropdown
-        placeholder="(702) 123-4567"
-      />
-      <p>Disabled dropdown and country code</p>
-      <MaterialUiPhoneNumber
-        onlyCountries={['us']}
-        defaultCountry="us"
-        disableAreaCodes
-        disableCountryCode
         disableDropdown
         placeholder="(702) 123-4567"
       />
