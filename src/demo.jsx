@@ -1,6 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 import MaterialUiPhoneNumber from './index';
+import mockItems from './mock'
 
 class ChangeDemo extends React.Component {
   constructor(props) {
@@ -25,6 +26,8 @@ class ChangeDemo extends React.Component {
         <MaterialUiPhoneNumber
           defaultCountry="it"
           preferredCountries={['it', 'se']}
+          sx={{marginTop: '1rem'}}
+          label="Phone number"
           onChange={(e) => {
             this.setState({ number: e });
           }}
@@ -41,17 +44,20 @@ export default render(
       <p>Exclude countries (usa, canada)</p>
       <MaterialUiPhoneNumber
         defaultCountry="no"
+        label="Phone number"
         excludeCountries={['us', 'ca']}
       />
       <p>Only countries</p>
       <MaterialUiPhoneNumber
         defaultCountry="gb"
         onlyCountries={['gb', 'es']}
+        label="Phone number"
       />
       <p>Preferred countries</p>
       <MaterialUiPhoneNumber
         defaultCountry="it"
         preferredCountries={['it', 'se']}
+        label="Phone number"
       />
       <p>onChange</p>
       <ChangeDemo />
@@ -60,6 +66,7 @@ export default render(
         defaultCountry="it"
         preferredCountries={['it', 'se']}
         native
+        label="Phone number"
       />
     </div>
 
@@ -68,6 +75,7 @@ export default render(
       <p>Auto country detect by value</p>
       <MaterialUiPhoneNumber
         value="+3802343252"
+        label="Phone number"
       />
       <p>Disabled flag by default</p>
       <p>Customizable placeholder</p>
@@ -77,12 +85,12 @@ export default render(
       display: 'inline-block', marginLeft: '40px', verticalAlign: 'top', marginTop: '35px',
     }}
     >
-      <p>Disabled dropdown</p>
+
+      <p>Custom list</p>
       <MaterialUiPhoneNumber
-        onlyCountries={['us']}
-        defaultCountry="us"
-        disableDropdown
-        placeholder="(702) 123-4567"
+        defaultCountry="ar"
+        label="Phone number"
+        countryList={mockItems}
       />
     </div>
   </div>,

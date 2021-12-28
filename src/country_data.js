@@ -18,1504 +18,1339 @@
 
 const rawAllCountries = [
   [
-    'Afghanistan',
-    ['asia'],
-    'af',
-    '93',
+    "Albania",
+    "al",
+    "355",
+    "+... ........."
   ],
   [
-    'Albania',
-    ['europe'],
-    'al',
-    '355',
-    '+... .........',
+    "Algeria",
+    "dz",
+    "213"
   ],
   [
-    'Algeria',
-    ['africa', 'north-africa'],
-    'dz',
-    '213',
+    "American Samoa",
+    "as",
+    "1684"
   ],
   [
-    'American Samoa',
-    ['oceania'],
-    'as',
-    '1684',
+    "Andorra",
+    "ad",
+    "376"
   ],
   [
-    'Andorra',
-    ['europe'],
-    'ad',
-    '376',
+    "Angola",
+    "ao",
+    "244"
   ],
   [
-    'Angola',
-    ['africa'],
-    'ao',
-    '244',
+    "Anguilla",
+    "ai",
+    "1264"
   ],
   [
-    'Anguilla',
-    ['america', 'carribean'],
-    'ai',
-    '1264',
+    "Antigua and Barbuda",
+    "ag",
+    "1268"
   ],
   [
-    'Antigua and Barbuda',
-    ['america', 'carribean'],
-    'ag',
-    '1268',
+    "Argentina",
+    "ar",
+    "54",
+    "+.. (..) ........"
   ],
   [
-    'Argentina',
-    ['america', 'south-america'],
-    'ar',
-    '54',
-    '+.. (..) ........',
+    "Armenia",
+    "am",
+    "374"
   ],
   [
-    'Armenia',
-    ['asia', 'ex-ussr'],
-    'am',
-    '374',
+    "Aruba",
+    "aw",
+    "297"
   ],
   [
-    'Aruba',
-    ['america', 'carribean'],
-    'aw',
-    '297',
+    "Australia",
+    "au",
+    "61",
+    "+.. ... ... ..."
   ],
   [
-    'Australia',
-    ['oceania'],
-    'au',
-    '61',
-    '+.. ... ... ...',
+    "Austria",
+    "at",
+    "43"
   ],
   [
-    'Austria',
-    ['europe', 'european-union'],
-    'at',
-    '43',
+    "Azerbaijan",
+    "az",
+    "994"
   ],
   [
-    'Azerbaijan',
-    ['asia', 'ex-ussr'],
-    'az',
-    '994',
+    "Bahamas",
+    "bs",
+    "1242"
   ],
   [
-    'Bahamas',
-    ['america', 'carribean'],
-    'bs',
-    '1242',
+    "Bahrain",
+    "bh",
+    "973"
   ],
   [
-    'Bahrain',
-    ['middle-east'],
-    'bh',
-    '973',
+    "Bangladesh",
+    "bd",
+    "880"
   ],
   [
-    'Bangladesh',
-    ['asia'],
-    'bd',
-    '880',
+    "Barbados",
+    "bb",
+    "1246"
   ],
   [
-    'Barbados',
-    ['america', 'carribean'],
-    'bb',
-    '1246',
+    "Belarus",
+    "by",
+    "375",
+    "+... (..) ... .. .."
   ],
   [
-    'Belarus',
-    ['europe', 'ex-ussr'],
-    'by',
-    '375',
-    '+... (..) ... .. ..',
+    "Belgium",
+    "be",
+    "32",
+    "+.. ... .. .. .."
   ],
   [
-    'Belgium',
-    ['europe', 'european-union'],
-    'be',
-    '32',
-    '+.. ... .. .. ..',
+    "Belize",
+    "bz",
+    "501"
   ],
   [
-    'Belize',
-    ['america', 'central-america'],
-    'bz',
-    '501',
+    "Benin",
+    "bj",
+    "229",
+    "+... .... ...."
   ],
   [
-    'Benin',
-    ['africa'],
-    'bj',
-    '229',
-    '+... .... ....',
+    "Bermuda",
+    "bm",
+    "1441"
   ],
   [
-    'Bermuda',
-    ['america', 'north-america'],
-    'bm',
-    '1441',
+    "Bhutan",
+    "bt",
+    "975"
   ],
   [
-    'Bhutan',
-    ['asia'],
-    'bt',
-    '975',
+    "Bolivia",
+    "bo",
+    "591"
   ],
   [
-    'Bolivia',
-    ['america', 'south-america'],
-    'bo',
-    '591',
+    "Bosnia and Herzegovina",
+    "ba",
+    "387"
   ],
   [
-    'Bosnia and Herzegovina',
-    ['europe'],
-    'ba',
-    '387',
+    "Botswana",
+    "bw",
+    "267"
   ],
   [
-    'Botswana',
-    ['africa'],
-    'bw',
-    '267',
+    "Brazil",
+    "br",
+    "55",
+    "+.. (..) ........."
   ],
   [
-    'Brazil',
-    ['america', 'south-america'],
-    'br',
-    '55',
-    '+.. (..) .........',
+    "British Indian Ocean Territory",
+    "io",
+    "246"
   ],
   [
-    'British Indian Ocean Territory',
-    ['asia'],
-    'io',
-    '246',
+    "British Virgin Islands",
+    "vg",
+    "1284"
   ],
   [
-    'British Virgin Islands',
-    ['america', 'carribean'],
-    'vg',
-    '1284',
+    "Brunei",
+    "bn",
+    "673"
   ],
   [
-    'Brunei',
-    ['asia'],
-    'bn',
-    '673',
+    "Bulgaria",
+    "bg",
+    "359"
   ],
   [
-    'Bulgaria',
-    ['europe', 'european-union'],
-    'bg',
-    '359',
+    "Burkina Faso",
+    "bf",
+    "226",
+    "+... .. .. .. .."
   ],
   [
-    'Burkina Faso',
-    ['africa'],
-    'bf',
-    '226',
-    '+... .. .. .. ..',
+    "Burundi",
+    "bi",
+    "257",
+    "+... .. .. .. .."
   ],
   [
-    'Burundi',
-    ['africa'],
-    'bi',
-    '257',
-    '+... .. .. .. ..',
+    "Cambodia",
+    "kh",
+    "855"
   ],
   [
-    'Cambodia',
-    ['asia'],
-    'kh',
-    '855',
+    "Cameroon",
+    "cm",
+    "237"
   ],
   [
-    'Cameroon',
-    ['africa'],
-    'cm',
-    '237',
-  ],
-  [
-    'Canada',
-    ['america', 'north-america'],
-    'ca',
-    '1',
-    '+. (...) ...-....',
-    1, ['204', '236', '249', '250', '289', '306', '343', '365', '387', '403', '416', '418', '431', '437', '438', '450', '506', '514', '519', '548', '579', '581', '587', '604', '613', '639', '647', '672', '705', '709', '742', '778', '780', '782', '807', '819', '825', '867', '873', '902', '905'],
-  ],
-  [
-    'Cape Verde',
-    ['africa'],
-    'cv',
-    '238',
-    '+... ... .. ..',
-  ],
-  [
-    'Caribbean Netherlands',
-    ['america', 'carribean'],
-    'bq',
-    '599',
-    '',
+    "Canada",
+    "ca",
+    "1",
+    "+. (...) ...-....",
     1,
+    [
+      "204",
+      "236",
+      "249",
+      "250",
+      "289",
+      "306",
+      "343",
+      "365",
+      "387",
+      "403",
+      "416",
+      "418",
+      "431",
+      "437",
+      "438",
+      "450",
+      "506",
+      "514",
+      "519",
+      "548",
+      "579",
+      "581",
+      "587",
+      "604",
+      "613",
+      "639",
+      "647",
+      "672",
+      "705",
+      "709",
+      "742",
+      "778",
+      "780",
+      "782",
+      "807",
+      "819",
+      "825",
+      "867",
+      "873",
+      "902",
+      "905"
+    ]
   ],
   [
-    'Cayman Islands',
-    ['america', 'carribean'],
-    'ky',
-    '1345',
+    "Cape Verde",
+    "cv",
+    "238",
+    "+... ... .. .."
   ],
   [
-    'Central African Republic',
-    ['africa'],
-    'cf',
-    '236',
-    '+... .... ....',
+    "Caribbean Netherlands",
+    "bq",
+    "599",
+    "",
+    1
   ],
   [
-    'Chad',
-    ['africa'],
-    'td',
-    '235',
-    '+... .. .. .. ..',
+    "Cayman Islands",
+    "ky",
+    "1345"
   ],
   [
-    'Chile',
-    ['america', 'south-america'],
-    'cl',
-    '56',
+    "Central African Republic",
+    "cf",
+    "236",
+    "+... .... ...."
   ],
   [
-    'China',
-    ['asia'],
-    'cn',
-    '86',
-    '+.. ..-.........',
+    "Chad",
+    "td",
+    "235",
+    "+... .. .. .. .."
   ],
   [
-    'Colombia',
-    ['america', 'south-america'],
-    'co',
-    '57',
+    "Chile",
+    "cl",
+    "56"
   ],
   [
-    'Comoros',
-    ['africa'],
-    'km',
-    '269',
-    '+... ... ....',
+    "China",
+    "cn",
+    "86",
+    "+.. ..-........."
   ],
   [
-    'Congo',
-    ['africa'],
-    'cd',
-    '243',
+    "Colombia",
+    "co",
+    "57"
   ],
   [
-    'Congo',
-    ['africa'],
-    'cg',
-    '242',
-    '+... .. .. .....',
+    "Comoros",
+    "km",
+    "269",
+    "+... ... ...."
   ],
   [
-    'Cook Islands',
-    ['oceania'],
-    'ck',
-    '682',
+    "Congo",
+    "cd",
+    "243"
   ],
   [
-    'Costa Rica',
-    ['america', 'central-america'],
-    'cr',
-    '506',
-    '+... ....-....',
+    "Congo",
+    "cg",
+    "242",
+    "+... .. .. ....."
   ],
   [
-    'Côte d’Ivoire',
-    ['africa'],
-    'ci',
-    '225',
-    '+... .. .. .. ..',
+    "Cook Islands",
+    "ck",
+    "682"
   ],
   [
-    'Croatia',
-    ['europe', 'european-union'],
-    'hr',
-    '385',
+    "Costa Rica",
+    "cr",
+    "506",
+    "+... ....-...."
   ],
   [
-    'Cuba',
-    ['america', 'carribean'],
-    'cu',
-    '53',
+    "Côte d’Ivoire",
+    "ci",
+    "225",
+    "+... .. .. .. .."
   ],
   [
-    'Curaçao',
-    ['america', 'carribean'],
-    'cw',
-    '599',
-    '',
-    0,
+    "Croatia",
+    "hr",
+    "385"
   ],
   [
-    'Cyprus',
-    ['europe', 'european-union'],
-    'cy',
-    '357',
-    '+... .. ......',
+    "Cuba",
+    "cu",
+    "53"
   ],
   [
-    'Czech Republic',
-    ['europe', 'european-union'],
-    'cz',
-    '420',
+    "Curaçao",
+    "cw",
+    "599",
+    "",
+    0
   ],
   [
-    'Denmark',
-    ['europe', 'european-union'],
-    'dk',
-    '45',
-    '+.. .. .. .. ..',
+    "Cyprus",
+    "cy",
+    "357",
+    "+... .. ......"
   ],
   [
-    'Djibouti',
-    ['africa'],
-    'dj',
-    '253',
+    "Czech Republic",
+    "cz",
+    "420"
   ],
   [
-    'Dominica',
-    ['america', 'carribean'],
-    'dm',
-    '1767',
+    "Denmark",
+    "dk",
+    "45",
+    "+.. .. .. .. .."
   ],
   [
-    'Dominican Republic',
-    ['america', 'carribean'],
-    'do',
-    '1',
-    '',
-    2, ['809', '829', '849'],
+    "Djibouti",
+    "dj",
+    "253"
   ],
   [
-    'Ecuador',
-    ['america', 'south-america'],
-    'ec',
-    '593',
+    "Dominica",
+    "dm",
+    "1767"
   ],
   [
-    'Egypt',
-    ['africa', 'north-africa'],
-    'eg',
-    '20',
-  ],
-  [
-    'El Salvador',
-    ['america', 'central-america'],
-    'sv',
-    '503',
-    '+... ....-....',
-  ],
-  [
-    'Equatorial Guinea',
-    ['africa'],
-    'gq',
-    '240',
-    '+... .. ... ....',
-  ],
-  [
-    'Eritrea',
-    ['africa'],
-    'er',
-    '291',
-  ],
-  [
-    'Estonia',
-    ['europe', 'european-union', 'ex-ussr'],
-    'ee',
-    '372',
-    '+... .... ......',
-  ],
-  [
-    'Ethiopia',
-    ['africa'],
-    'et',
-    '251',
-  ],
-  [
-    'Falkland Islands',
-    ['america', 'south-america'],
-    'fk',
-    '500',
-  ],
-  [
-    'Faroe Islands',
-    ['europe'],
-    'fo',
-    '298',
-  ],
-  [
-    'Fiji',
-    ['oceania'],
-    'fj',
-    '679',
-  ],
-  [
-    'Finland',
-    ['europe', 'european-union'],
-    'fi',
-    '358',
-    '+... .. ... .. ..',
-  ],
-  [
-    'France',
-    ['europe', 'european-union'],
-    'fr',
-    '33',
-    '+.. . .. .. .. ..',
-  ],
-  [
-    'French Guiana',
-    ['america', 'south-america'],
-    'gf',
-    '594',
-  ],
-  [
-    'French Polynesia',
-    ['oceania'],
-    'pf',
-    '689',
-  ],
-  [
-    'Gabon',
-    ['africa'],
-    'ga',
-    '241',
-    '+... .. .. .. ..',
-  ],
-  [
-    'Gambia',
-    ['africa'],
-    'gm',
-    '220',
-  ],
-  [
-    'Georgia',
-    ['asia', 'ex-ussr'],
-    'ge',
-    '995',
-  ],
-  [
-    'Germany',
-    ['europe', 'european-union'],
-    'de',
-    '49',
-    '+.. .... ........',
-  ],
-  [
-    'Ghana',
-    ['africa'],
-    'gh',
-    '233',
-  ],
-  [
-    'Gibraltar',
-    ['europe'],
-    'gi',
-    '350',
-  ],
-  [
-    'Greece',
-    ['europe', 'european-union'],
-    'gr',
-    '30',
-  ],
-  [
-    'Greenland',
-    ['america'],
-    'gl',
-    '299',
-  ],
-  [
-    'Grenada',
-    ['america', 'carribean'],
-    'gd',
-    '1473',
-  ],
-  [
-    'Guadeloupe',
-    ['america', 'carribean'],
-    'gp',
-    '590',
-    '',
-    0,
-  ],
-  [
-    'Guam',
-    ['oceania'],
-    'gu',
-    '1671',
-  ],
-  [
-    'Guatemala',
-    ['america', 'central-america'],
-    'gt',
-    '502',
-    '+... ....-....',
-  ],
-  [
-    'Guinea',
-    ['africa'],
-    'gn',
-    '224',
-    '+... . ... ....',
-  ],
-  [
-    'Guinea-Bissau',
-    ['africa'],
-    'gw',
-    '245',
-  ],
-  [
-    'Guyana',
-    ['america', 'south-america'],
-    'gy',
-    '592',
-  ],
-  [
-    'Haiti',
-    ['america', 'carribean'],
-    'ht',
-    '509',
-    '+... ....-....',
-  ],
-  [
-    'Honduras',
-    ['america', 'central-america'],
-    'hn',
-    '504',
-  ],
-  [
-    'Hong Kong',
-    ['asia'],
-    'hk',
-    '852',
-    '+... .... ....',
-  ],
-  [
-    'Hungary',
-    ['europe', 'european-union'],
-    'hu',
-    '36',
-  ],
-  [
-    'Iceland',
-    ['europe'],
-    'is',
-    '354',
-    '+... ... ....',
-  ],
-  [
-    'India',
-    ['asia'],
-    'in',
-    '91',
-    '+.. .....-.....',
-  ],
-  [
-    'Indonesia',
-    ['asia'],
-    'id',
-    '62',
-  ],
-  [
-    'Iran',
-    ['middle-east'],
-    'ir',
-    '98',
-  ],
-  [
-    'Iraq',
-    ['middle-east'],
-    'iq',
-    '964',
-  ],
-  [
-    'Ireland',
-    ['europe', 'european-union'],
-    'ie',
-    '353',
-    '+... .. .......',
-  ],
-  [
-    'Israel',
-    ['middle-east'],
-    'il',
-    '972',
-    '+... ... ... ....',
-  ],
-  [
-    'Italy',
-    ['europe', 'european-union'],
-    'it',
-    '39',
-    '+.. ... .......',
-    0,
-  ],
-  [
-    'Jamaica',
-    ['america', 'carribean'],
-    'jm',
-    '1876',
-  ],
-  [
-    'Japan',
-    ['asia'],
-    'jp',
-    '81',
-    '+.. .. .... ....',
-  ],
-  [
-    'Jordan',
-    ['middle-east'],
-    'jo',
-    '962',
-  ],
-  [
-    'Kazakhstan',
-    ['asia', 'ex-ussr'],
-    'kz',
-    '7',
-    '+. ... ...-..-..',
-    1, ['313', '327', '7172', '312', '73622', '321', '324', '336', '318', '315', '325', '311', '326', '310'],
-  ],
-  [
-    'Kenya',
-    ['africa'],
-    'ke',
-    '254',
-  ],
-  [
-    'Kiribati',
-    ['oceania'],
-    'ki',
-    '686',
-  ],
-  [
-    'Kosovo',
-    ['europe'],
-    'ks',
-    '383',
-  ],
-  [
-    'Kuwait',
-    ['middle-east'],
-    'kw',
-    '965',
-  ],
-  [
-    'Kyrgyzstan',
-    ['asia', 'ex-ussr'],
-    'kg',
-    '996',
-  ],
-  [
-    'Laos',
-    ['asia'],
-    'la',
-    '856',
-  ],
-  [
-    'Latvia',
-    ['europe', 'european-union', 'ex-ussr'],
-    'lv',
-    '371',
-  ],
-  [
-    'Lebanon',
-    ['middle-east'],
-    'lb',
-    '961',
-  ],
-  [
-    'Lesotho',
-    ['africa'],
-    'ls',
-    '266',
-  ],
-  [
-    'Liberia',
-    ['africa'],
-    'lr',
-    '231',
-  ],
-  [
-    'Libya',
-    ['africa', 'north-africa'],
-    'ly',
-    '218',
-  ],
-  [
-    'Liechtenstein',
-    ['europe'],
-    'li',
-    '423',
-  ],
-  [
-    'Lithuania',
-    ['europe', 'european-union', 'ex-ussr'],
-    'lt',
-    '370',
-  ],
-  [
-    'Luxembourg',
-    ['europe', 'european-union'],
-    'lu',
-    '352',
-    '+.. . ... ... ...',
-  ],
-  [
-    'Macau',
-    ['asia'],
-    'mo',
-    '853',
-  ],
-  [
-    'Macedonia',
-    ['europe'],
-    'mk',
-    '389',
-  ],
-  [
-    'Madagascar',
-    ['africa'],
-    'mg',
-    '261',
-    '+... .. . ......',
-  ],
-  [
-    'Malawi',
-    ['africa'],
-    'mw',
-    '265',
-  ],
-  [
-    'Malaysia',
-    ['asia'],
-    'my',
-    '60',
-    '+.. ..-....-....',
-  ],
-  [
-    'Maldives',
-    ['asia'],
-    'mv',
-    '960',
-  ],
-  [
-    'Mali',
-    ['africa'],
-    'ml',
-    '223',
-    '+... .... ....',
-  ],
-  [
-    'Malta',
-    ['europe', 'european-union'],
-    'mt',
-    '356',
-  ],
-  [
-    'Marshall Islands',
-    ['oceania'],
-    'mh',
-    '692',
-  ],
-  [
-    'Martinique',
-    ['america', 'carribean'],
-    'mq',
-    '596',
-  ],
-  [
-    'Mauritania',
-    ['africa'],
-    'mr',
-    '222',
-    '+... .... ....',
-  ],
-  [
-    'Mauritius',
-    ['africa'],
-    'mu',
-    '230',
-    '+... . ... ....',
-  ],
-  [
-    'Mexico',
-    ['america', 'central-america'],
-    'mx',
-    '52',
-  ],
-  [
-    'Micronesia',
-    ['oceania'],
-    'fm',
-    '691',
-  ],
-  [
-    'Moldova',
-    ['europe'],
-    'md',
-    '373',
-    '+... (..) ..-..-..',
-  ],
-  [
-    'Monaco',
-    ['europe'],
-    'mc',
-    '377',
-  ],
-  [
-    'Mongolia',
-    ['asia'],
-    'mn',
-    '976',
-  ],
-  [
-    'Montenegro',
-    ['europe'],
-    'me',
-    '382',
-  ],
-  [
-    'Montserrat',
-    ['america', 'carribean'],
-    'ms',
-    '1664',
-  ],
-  [
-    'Morocco',
-    ['africa', 'north-africa'],
-    'ma',
-    '212',
-    '+212-.........',
-  ],
-  [
-    'Mozambique',
-    ['africa'],
-    'mz',
-    '258',
-    '+... ... ......',
-  ],
-  [
-    'Myanmar',
-    ['asia'],
-    'mm',
-    '95',
-  ],
-  [
-    'Namibia',
-    ['africa'],
-    'na',
-    '264',
-  ],
-  [
-    'Nauru',
-    ['africa'],
-    'nr',
-    '674',
-  ],
-  [
-    'Nepal',
-    ['asia'],
-    'np',
-    '977',
-  ],
-  [
-    'Netherlands',
-    ['europe', 'european-union'],
-    'nl',
-    '31',
-    '+.. .. ........',
-  ],
-  [
-    'New Caledonia',
-    ['oceania'],
-    'nc',
-    '687',
-  ],
-  [
-    'New Zealand',
-    ['oceania'],
-    'nz',
-    '64',
-    '+.. ...-...-....',
-  ],
-  [
-    'Nicaragua',
-    ['america', 'central-america'],
-    'ni',
-    '505',
-  ],
-  [
-    'Niger',
-    ['africa'],
-    'ne',
-    '227',
-    '+... .. .. .. ..',
-  ],
-  [
-    'Nigeria',
-    ['africa'],
-    'ng',
-    '234',
-  ],
-  [
-    'Niue',
-    ['asia'],
-    'nu',
-    '683',
-  ],
-  [
-    'Norfolk Island',
-    ['oceania'],
-    'nf',
-    '672',
-  ],
-  [
-    'North Korea',
-    ['asia'],
-    'kp',
-    '850',
-  ],
-  [
-    'Northern Mariana Islands',
-    ['oceania'],
-    'mp',
-    '1670',
-  ],
-  [
-    'Norway',
-    ['europe'],
-    'no',
-    '47',
-    '+.. ... .. ...',
-  ],
-  [
-    'Oman',
-    ['middle-east'],
-    'om',
-    '968',
-  ],
-  [
-    'Pakistan',
-    ['asia'],
-    'pk',
-    '92',
-    '+.. ...-.......',
-  ],
-  [
-    'Palau',
-    ['oceania'],
-    'pw',
-    '680',
-  ],
-  [
-    'Palestine',
-    ['middle-east'],
-    'ps',
-    '970',
-  ],
-  [
-    'Panama',
-    ['america', 'central-america'],
-    'pa',
-    '507',
-  ],
-  [
-    'Papua New Guinea',
-    ['oceania'],
-    'pg',
-    '675',
-  ],
-  [
-    'Paraguay',
-    ['america', 'south-america'],
-    'py',
-    '595',
-  ],
-  [
-    'Peru',
-    ['america', 'south-america'],
-    'pe',
-    '51',
-  ],
-  [
-    'Philippines',
-    ['asia'],
-    'ph',
-    '63',
-    '+.. .... .......',
-  ],
-  [
-    'Poland',
-    ['europe', 'european-union'],
-    'pl',
-    '48',
-    '+.. ...-...-...',
-  ],
-  [
-    'Portugal',
-    ['europe', 'european-union'],
-    'pt',
-    '351',
-  ],
-  [
-    'Puerto Rico',
-    ['america', 'carribean'],
-    'pr',
-    '1',
-    '',
-    3, ['787', '939'],
-  ],
-  [
-    'Qatar',
-    ['middle-east'],
-    'qa',
-    '974',
-  ],
-  [
-    'Réunion',
-    ['africa'],
-    're',
-    '262',
-    '+.. . .. .. .. ..',
-  ],
-  [
-    'Romania',
-    ['europe', 'european-union'],
-    'ro',
-    '40',
-  ],
-  [
-    'Russia',
-    ['europe', 'asia', 'ex-ussr'],
-    'ru',
-    '7',
-    '+. (...) ...-..-..',
-    0,
-  ],
-  [
-    'Rwanda',
-    ['africa'],
-    'rw',
-    '250',
-    '+... ... ... ...',
-  ],
-  [
-    'Saint Barthélemy',
-    ['america', 'carribean'],
-    'bl',
-    '590',
-    '',
-    1,
-  ],
-  [
-    'Saint Helena',
-    ['africa'],
-    'sh',
-    '290',
-  ],
-  [
-    'Saint Kitts and Nevis',
-    ['america', 'carribean'],
-    'kn',
-    '1869',
-  ],
-  [
-    'Saint Lucia',
-    ['america', 'carribean'],
-    'lc',
-    '1758',
-  ],
-  [
-    'Saint Martin',
-    ['america', 'carribean'],
-    'mf',
-    '590',
-    '',
+    "Dominican Republic",
+    "do",
+    "1",
+    "",
     2,
+    [
+      "809",
+      "829",
+      "849"
+    ]
   ],
   [
-    'Saint Pierre and Miquelon',
-    ['america', 'north-america'],
-    'pm',
-    '508',
+    "Ecuador",
+    "ec",
+    "593"
   ],
   [
-    'Saint Vincent and the Grenadines',
-    ['america', 'carribean'],
-    'vc',
-    '1784',
+    "Egypt",
+    "eg",
+    "20"
   ],
   [
-    'Samoa',
-    ['oceania'],
-    'ws',
-    '685',
+    "El Salvador",
+    "sv",
+    "503",
+    "+... ....-...."
   ],
   [
-    'San Marino',
-    ['europe'],
-    'sm',
-    '378',
+    "Equatorial Guinea",
+    "gq",
+    "240",
+    "+... .. ... ...."
   ],
   [
-    'São Tomé and Príncipe',
-    ['africa'],
-    'st',
-    '239',
-    '+... ... ....',
+    "Eritrea",
+    "er",
+    "291"
   ],
   [
-    'Saudi Arabia',
-    ['middle-east'],
-    'sa',
-    '966',
+    "Estonia",
+    "ee",
+    "372",
+    "+... .... ......"
   ],
   [
-    'Senegal',
-    ['africa'],
-    'sn',
-    '221',
-    '+... .. ... .. ..',
+    "Ethiopia",
+    "et",
+    "251"
   ],
   [
-    'Serbia',
-    ['europe'],
-    'rs',
-    '381',
+    "Falkland Islands",
+    "fk",
+    "500"
   ],
   [
-    'Seychelles',
-    ['africa'],
-    'sc',
-    '248',
-    '+... ... ....', // from https://en.wikipedia.org/wiki/Telephone_numbers_in_Seychelles
+    "Faroe Islands",
+    "fo",
+    "298"
   ],
   [
-    'Sierra Leone',
-    ['africa'],
-    'sl',
-    '232',
+    "Fiji",
+    "fj",
+    "679"
   ],
   [
-    'Singapore',
-    ['asia'],
-    'sg',
-    '65',
-    '+.. ....-....',
+    "Finland",
+    "fi",
+    "358",
+    "+... .. ... .. .."
   ],
   [
-    'Sint Maarten',
-    ['america', 'carribean'],
-    'sx',
-    '1721',
+    "France",
+    "fr",
+    "33",
+    "+.. . .. .. .. .."
   ],
   [
-    'Slovakia',
-    ['europe', 'european-union'],
-    'sk',
-    '421',
+    "French Guiana",
+    "gf",
+    "594"
   ],
   [
-    'Slovenia',
-    ['europe', 'european-union'],
-    'si',
-    '386',
+    "French Polynesia",
+    "pf",
+    "689"
   ],
   [
-    'Solomon Islands',
-    ['oceania'],
-    'sb',
-    '677',
+    "Gabon",
+    "ga",
+    "241",
+    "+... .. .. .. .."
   ],
   [
-    'Somalia',
-    ['africa'],
-    'so',
-    '252',
+    "Gambia",
+    "gm",
+    "220"
   ],
   [
-    'South Africa',
-    ['africa'],
-    'za',
-    '27',
-    '+.. .. ... ....',
+    "Georgia",
+    "ge",
+    "995"
   ],
   [
-    'South Korea',
-    ['asia'],
-    'kr',
-    '82',
-    '+.. ... .... ....',
+    "Germany",
+    "de",
+    "49",
+    "+.. .... ........"
   ],
   [
-    'South Sudan',
-    ['africa', 'north-africa'],
-    'ss',
-    '211',
+    "Ghana",
+    "gh",
+    "233"
   ],
   [
-    'Spain',
-    ['europe', 'european-union'],
-    'es',
-    '34',
-    '+.. ... ... ...',
+    "Gibraltar",
+    "gi",
+    "350"
   ],
   [
-    'Sri Lanka',
-    ['asia'],
-    'lk',
-    '94',
+    "Greece",
+    "gr",
+    "30"
   ],
   [
-    'Sudan',
-    ['africa'],
-    'sd',
-    '249',
+    "Greenland",
+    "gl",
+    "299"
   ],
   [
-    'Suriname',
-    ['america', 'south-america'],
-    'sr',
-    '597',
+    "Grenada",
+    "gd",
+    "1473"
   ],
   [
-    'Swaziland',
-    ['africa'],
-    'sz',
-    '268',
+    "Guadeloupe",
+    "gp",
+    "590",
+    "",
+    0
   ],
   [
-    'Sweden',
-    ['europe', 'european-union'],
-    'se',
-    '46',
-    '+.. (..) ...-..-..',
+    "Guam",
+    "gu",
+    "1671"
   ],
   [
-    'Switzerland',
-    ['europe'],
-    'ch',
-    '41',
-    '+.. .. ... .. ..',
+    "Guatemala",
+    "gt",
+    "502",
+    "+... ....-...."
   ],
   [
-    'Syria',
-    ['middle-east'],
-    'sy',
-    '963',
+    "Guinea",
+    "gn",
+    "224",
+    "+... . ... ...."
   ],
   [
-    'Taiwan',
-    ['asia'],
-    'tw',
-    '886',
+    "Guinea-Bissau",
+    "gw",
+    "245"
   ],
   [
-    'Tajikistan',
-    ['asia', 'ex-ussr'],
-    'tj',
-    '992',
+    "Guyana",
+    "gy",
+    "592"
   ],
   [
-    'Tanzania',
-    ['africa'],
-    'tz',
-    '255',
+    "Haiti",
+    "ht",
+    "509",
+    "+... ....-...."
   ],
   [
-    'Thailand',
-    ['asia'],
-    'th',
-    '66',
+    "Honduras",
+    "hn",
+    "504"
   ],
   [
-    'Timor-Leste',
-    ['asia'],
-    'tl',
-    '670',
+    "Hong Kong",
+    "hk",
+    "852",
+    "+... .... ...."
   ],
   [
-    'Togo',
-    ['africa'],
-    'tg',
-    '228',
-    '+... ... .....',
+    "Hungary",
+    "hu",
+    "36"
   ],
   [
-    'Tokelau',
-    ['oceania'],
-    'tk',
-    '690',
+    "Iceland",
+    "is",
+    "354",
+    "+... ... ...."
   ],
   [
-    'Tonga',
-    ['oceania'],
-    'to',
-    '676',
+    "India",
+    "in",
+    "91",
+    "+.. .....-....."
   ],
   [
-    'Trinidad and Tobago',
-    ['america', 'carribean'],
-    'tt',
-    '1868',
+    "Indonesia",
+    "id",
+    "62"
   ],
   [
-    'Tunisia',
-    ['africa', 'north-africa'],
-    'tn',
-    '216',
-    '+... .. ... ...',
+    "Iran",
+    "ir",
+    "98"
   ],
   [
-    'Turkey',
-    ['europe'],
-    'tr',
-    '90',
-    '+.. ... ... .. ..',
+    "Iraq",
+    "iq",
+    "964"
   ],
   [
-    'Turkmenistan',
-    ['asia', 'ex-ussr'],
-    'tm',
-    '993',
+    "Ireland",
+    "ie",
+    "353",
+    "+... .. ......."
   ],
   [
-    'Turks and Caicos Islands',
-    ['america', 'carribean'],
-    'tc',
-    '1649',
+    "Israel",
+    "il",
+    "972",
+    "+... ... ... ...."
   ],
   [
-    'Tuvalu',
-    ['asia'],
-    'tv',
-    '688',
+    "Italy",
+    "it",
+    "39",
+    "+.. ... .......",
+    0
   ],
   [
-    'U.S. Virgin Islands',
-    ['america', 'carribean'],
-    'vi',
-    '1340',
+    "Jamaica",
+    "jm",
+    "1876"
   ],
   [
-    'Uganda',
-    ['africa'],
-    'ug',
-    '256',
+    "Japan",
+    "jp",
+    "81",
+    "+.. .. .... ...."
   ],
   [
-    'Ukraine',
-    ['europe', 'ex-ussr'],
-    'ua',
-    '380',
-    '+... (..) ... .. ..',
+    "Jordan",
+    "jo",
+    "962"
   ],
   [
-    'United Arab Emirates',
-    ['middle-east'],
-    'ae',
-    '971',
-  ],
-  [
-    'United Kingdom',
-    ['europe', 'european-union'],
-    'gb',
-    '44',
-    '+.. .... ......',
-  ],
-  [
-    'United States',
-    ['america', 'north-america'],
-    'us',
-    '1',
-    '+. (...) ...-....',
-    0,
-  ],
-  [
-    'Uruguay',
-    ['america', 'south-america'],
-    'uy',
-    '598',
-    '+... .........'
-  ],
-  [
-    'Uzbekistan',
-    ['asia', 'ex-ussr'],
-    'uz',
-    '998',
-  ],
-  [
-    'Vanuatu',
-    ['oceania'],
-    'vu',
-    '678',
-  ],
-  [
-    'Vatican City',
-    ['europe'],
-    'va',
-    '39',
-    '+.. .. .... ....',
+    "Kazakhstan",
+    "kz",
+    "7",
+    "+. ... ...-..-..",
     1,
+    [
+      "313",
+      "327",
+      "7172",
+      "312",
+      "73622",
+      "321",
+      "324",
+      "336",
+      "318",
+      "315",
+      "325",
+      "311",
+      "326",
+      "310"
+    ]
   ],
   [
-    'Venezuela',
-    ['america', 'south-america'],
-    've',
-    '58',
+    "Kenya",
+    "ke",
+    "254"
   ],
   [
-    'Vietnam',
-    ['asia'],
-    'vn',
-    '84',
+    "Kiribati",
+    "ki",
+    "686"
   ],
   [
-    'Wallis and Futuna',
-    ['oceania'],
-    'wf',
-    '681',
+    "Kosovo",
+    "ks",
+    "383"
   ],
   [
-    'Yemen',
-    ['middle-east'],
-    'ye',
-    '967',
+    "Kuwait",
+    "kw",
+    "965"
   ],
   [
-    'Zambia',
-    ['africa'],
-    'zm',
-    '260',
+    "Kyrgyzstan",
+    "kg",
+    "996"
   ],
   [
-    'Zimbabwe',
-    ['africa'],
-    'zw',
-    '263',
+    "Laos",
+    "la",
+    "856"
   ],
-];
+  [
+    "Latvia",
+    "lv",
+    "371"
+  ],
+  [
+    "Lebanon",
+    "lb",
+    "961"
+  ],
+  [
+    "Lesotho",
+    "ls",
+    "266"
+  ],
+  [
+    "Liberia",
+    "lr",
+    "231"
+  ],
+  [
+    "Libya",
+    "ly",
+    "218"
+  ],
+  [
+    "Liechtenstein",
+    "li",
+    "423"
+  ],
+  [
+    "Lithuania",
+    "lt",
+    "370"
+  ],
+  [
+    "Luxembourg",
+    "lu",
+    "352",
+    "+.. . ... ... ..."
+  ],
+  [
+    "Macau",
+    "mo",
+    "853"
+  ],
+  [
+    "Macedonia",
+    "mk",
+    "389"
+  ],
+  [
+    "Madagascar",
+    "mg",
+    "261",
+    "+... .. . ......"
+  ],
+  [
+    "Malawi",
+    "mw",
+    "265"
+  ],
+  [
+    "Malaysia",
+    "my",
+    "60",
+    "+.. ..-....-...."
+  ],
+  [
+    "Maldives",
+    "mv",
+    "960"
+  ],
+  [
+    "Mali",
+    "ml",
+    "223",
+    "+... .... ...."
+  ],
+  [
+    "Malta",
+    "mt",
+    "356"
+  ],
+  [
+    "Marshall Islands",
+    "mh",
+    "692"
+  ],
+  [
+    "Martinique",
+    "mq",
+    "596"
+  ],
+  [
+    "Mauritania",
+    "mr",
+    "222",
+    "+... .... ...."
+  ],
+  [
+    "Mauritius",
+    "mu",
+    "230",
+    "+... . ... ...."
+  ],
+  [
+    "Mexico",
+    "mx",
+    "52"
+  ],
+  [
+    "Micronesia",
+    "fm",
+    "691"
+  ],
+  [
+    "Moldova",
+    "md",
+    "373",
+    "+... (..) ..-..-.."
+  ],
+  [
+    "Monaco",
+    "mc",
+    "377"
+  ],
+  [
+    "Mongolia",
+    "mn",
+    "976"
+  ],
+  [
+    "Montenegro",
+    "me",
+    "382"
+  ],
+  [
+    "Montserrat",
+    "ms",
+    "1664"
+  ],
+  [
+    "Morocco",
+    "ma",
+    "212",
+    "+212-........."
+  ],
+  [
+    "Mozambique",
+    "mz",
+    "258",
+    "+... ... ......"
+  ],
+  [
+    "Myanmar",
+    "mm",
+    "95"
+  ],
+  [
+    "Namibia",
+    "na",
+    "264"
+  ],
+  [
+    "Nauru",
+    "nr",
+    "674"
+  ],
+  [
+    "Nepal",
+    "np",
+    "977"
+  ],
+  [
+    "Netherlands",
+    "nl",
+    "31",
+    "+.. .. ........"
+  ],
+  [
+    "New Caledonia",
+    "nc",
+    "687"
+  ],
+  [
+    "New Zealand",
+    "nz",
+    "64",
+    "+.. ...-...-...."
+  ],
+  [
+    "Nicaragua",
+    "ni",
+    "505"
+  ],
+  [
+    "Niger",
+    "ne",
+    "227",
+    "+... .. .. .. .."
+  ],
+  [
+    "Nigeria",
+    "ng",
+    "234"
+  ],
+  [
+    "Niue",
+    "nu",
+    "683"
+  ],
+  [
+    "Norfolk Island",
+    "nf",
+    "672"
+  ],
+  [
+    "North Korea",
+    "kp",
+    "850"
+  ],
+  [
+    "Northern Mariana Islands",
+    "mp",
+    "1670"
+  ],
+  [
+    "Norway",
+    "no",
+    "47",
+    "+.. ... .. ..."
+  ],
+  [
+    "Oman",
+    "om",
+    "968"
+  ],
+  [
+    "Pakistan",
+    "pk",
+    "92",
+    "+.. ...-......."
+  ],
+  [
+    "Palau",
+    "pw",
+    "680"
+  ],
+  [
+    "Palestine",
+    "ps",
+    "970"
+  ],
+  [
+    "Panama",
+    "pa",
+    "507"
+  ],
+  [
+    "Papua New Guinea",
+    "pg",
+    "675"
+  ],
+  [
+    "Paraguay",
+    "py",
+    "595"
+  ],
+  [
+    "Peru",
+    "pe",
+    "51"
+  ],
+  [
+    "Philippines",
+    "ph",
+    "63",
+    "+.. .... ......."
+  ],
+  [
+    "Poland",
+    "pl",
+    "48",
+    "+.. ...-...-..."
+  ],
+  [
+    "Portugal",
+    "pt",
+    "351"
+  ],
+  [
+    "Puerto Rico",
+    "pr",
+    "1",
+    "",
+    3,
+    [
+      "787",
+      "939"
+    ]
+  ],
+  [
+    "Qatar",
+    "qa",
+    "974"
+  ],
+  [
+    "Réunion",
+    "re",
+    "262",
+    "+.. . .. .. .. .."
+  ],
+  [
+    "Romania",
+    "ro",
+    "40"
+  ],
+  [
+    "Russia",
+    [
+      "europe",
+      "asia",
+      "ex-ussr"
+    ],
+    "ru",
+    "7",
+    "+. (...) ...-..-..",
+    0
+  ],
+  [
+    "Rwanda",
+    "rw",
+    "250",
+    "+... ... ... ..."
+  ],
+  [
+    "Saint Barthélemy",
+    "bl",
+    "590",
+    "",
+    1
+  ],
+  [
+    "Saint Helena",
+    "sh",
+    "290"
+  ],
+  [
+    "Saint Kitts and Nevis",
+    "kn",
+    "1869"
+  ],
+  [
+    "Saint Lucia",
+    "lc",
+    "1758"
+  ],
+  [
+    "Saint Martin",
+    "mf",
+    "590",
+    "",
+    2
+  ],
+  [
+    "Saint Pierre and Miquelon",
+    "pm",
+    "508"
+  ],
+  [
+    "Saint Vincent and the Grenadines",
+    "vc",
+    "1784"
+  ],
+  [
+    "Samoa",
+    "ws",
+    "685"
+  ],
+  [
+    "San Marino",
+    "sm",
+    "378"
+  ],
+  [
+    "São Tomé and Príncipe",
+    "st",
+    "239",
+    "+... ... ...."
+  ],
+  [
+    "Saudi Arabia",
+    "sa",
+    "966"
+  ],
+  [
+    "Senegal",
+    "sn",
+    "221",
+    "+... .. ... .. .."
+  ],
+  [
+    "Serbia",
+    "rs",
+    "381"
+  ],
+  [
+    "Seychelles",
+    "sc",
+    "248",
+    "+... ... ...."
+  ],
+  [
+    "Sierra Leone",
+    "sl",
+    "232"
+  ],
+  [
+    "Singapore",
+    "sg",
+    "65",
+    "+.. ....-...."
+  ],
+  [
+    "Sint Maarten",
+    "sx",
+    "1721"
+  ],
+  [
+    "Slovakia",
+    "sk",
+    "421"
+  ],
+  [
+    "Slovenia",
+    "si",
+    "386"
+  ],
+  [
+    "Solomon Islands",
+    "sb",
+    "677"
+  ],
+  [
+    "Somalia",
+    "so",
+    "252"
+  ],
+  [
+    "South Africa",
+    "za",
+    "27",
+    "+.. .. ... ...."
+  ],
+  [
+    "South Korea",
+    "kr",
+    "82",
+    "+.. ... .... ...."
+  ],
+  [
+    "South Sudan",
+    "ss",
+    "211"
+  ],
+  [
+    "Spain",
+    "es",
+    "34",
+    "+.. ... ... ..."
+  ],
+  [
+    "Sri Lanka",
+    "lk",
+    "94"
+  ],
+  [
+    "Sudan",
+    "sd",
+    "249"
+  ],
+  [
+    "Suriname",
+    "sr",
+    "597"
+  ],
+  [
+    "Swaziland",
+    "sz",
+    "268"
+  ],
+  [
+    "Sweden",
+    "se",
+    "46",
+    "+.. (..) ...-..-.."
+  ],
+  [
+    "Switzerland",
+    "ch",
+    "41",
+    "+.. .. ... .. .."
+  ],
+  [
+    "Syria",
+    "sy",
+    "963"
+  ],
+  [
+    "Taiwan",
+    "tw",
+    "886"
+  ],
+  [
+    "Tajikistan",
+    "tj",
+    "992"
+  ],
+  [
+    "Tanzania",
+    "tz",
+    "255"
+  ],
+  [
+    "Thailand",
+    "th",
+    "66"
+  ],
+  [
+    "Timor-Leste",
+    "tl",
+    "670"
+  ],
+  [
+    "Togo",
+    "tg",
+    "228",
+    "+... ... ....."
+  ],
+  [
+    "Tokelau",
+    "tk",
+    "690"
+  ],
+  [
+    "Tonga",
+    "to",
+    "676"
+  ],
+  [
+    "Trinidad and Tobago",
+    "tt",
+    "1868"
+  ],
+  [
+    "Tunisia",
+    "tn",
+    "216",
+    "+... .. ... ..."
+  ],
+  [
+    "Turkey",
+    "tr",
+    "90",
+    "+.. ... ... .. .."
+  ],
+  [
+    "Turkmenistan",
+    "tm",
+    "993"
+  ],
+  [
+    "Turks and Caicos Islands",
+    "tc",
+    "1649"
+  ],
+  [
+    "Tuvalu",
+    "tv",
+    "688"
+  ],
+  [
+    "U.S. Virgin Islands",
+    "vi",
+    "1340"
+  ],
+  [
+    "Uganda",
+    "ug",
+    "256"
+  ],
+  [
+    "Ukraine",
+    "ua",
+    "380",
+    "+... (..) ... .. .."
+  ],
+  [
+    "United Arab Emirates",
+    "ae",
+    "971"
+  ],
+  [
+    "United Kingdom",
+    "gb",
+    "44",
+    "+.. .... ......"
+  ],
+  [
+    "United States",
+    "us",
+    "1",
+    "+. (...) ...-....",
+    0
+  ],
+  [
+    "Uruguay",
+    "uy",
+    "598",
+    "+... ........."
+  ],
+  [
+    "Uzbekistan",
+    "uz",
+    "998"
+  ],
+  [
+    "Vanuatu",
+    "vu",
+    "678"
+  ],
+  [
+    "Vatican City",
+    "va",
+    "39",
+    "+.. .. .... ....",
+    1
+  ],
+  [
+    "Venezuela",
+    "ve",
+    "58"
+  ],
+  [
+    "Vietnam",
+    "vn",
+    "84"
+  ],
+  [
+    "Wallis and Futuna",
+    "wf",
+    "681"
+  ],
+  [
+    "Yemen",
+    "ye",
+    "967"
+  ],
+  [
+    "Zambia",
+    "zm",
+    "260"
+  ],
+  [
+    "Zimbabwe",
+    "zw",
+    "263"
+  ]
+]
+
 
 const allCountryCodes = {};
 
@@ -1528,11 +1363,10 @@ function addCountryCode(code, dialCode, priority) {
 }
 
 const allCountries = [].concat(...rawAllCountries.map((country) => {
-  const [name, regions, code, dialCode, format, priority] = country;
+  const [name, code, dialCode, format, priority] = country;
 
   const countryItem = {
     name,
-    regions,
     code,
     dialCode,
     priority,

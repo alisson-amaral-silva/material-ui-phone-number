@@ -30,7 +30,6 @@ const styles = () => ({
   native: {
     width: 30,
     height: 30,
-    padding: 8,
   },
   nativeRoot: {
     padding: 0,
@@ -74,7 +73,7 @@ class MaterialUiPhoneNumber extends React.Component {
 
   constructor(props) {
     super(props);
-    let filteredCountries = !!props.countryList.length ? props.countryList : countryData.allCountries;
+    let filteredCountries = props.countryList.length ? props.countryList : countryData.allCountries;
 
     const onlyCountries = this.excludeCountries(
       this.getOnlyCountries(props.onlyCountries, filteredCountries), props.excludeCountries,
@@ -113,6 +112,7 @@ class MaterialUiPhoneNumber extends React.Component {
       formattedNumber,
       placeholder: props.placeholder,
       onlyCountries,
+      variant: props.variant,
       preferredCountries,
       defaultCountry: props.defaultCountry,
       selectedCountry: countryGuess,
@@ -410,6 +410,7 @@ class MaterialUiPhoneNumber extends React.Component {
       selectedCountry: nextSelectedCountry,
       freezeSelection: true,
       formattedNumber: newFormattedNumber,
+      iconClicked: false
     }, () => {
       this.cursorToEnd();
       if (onChange) {
@@ -538,6 +539,7 @@ class MaterialUiPhoneNumber extends React.Component {
   }
 
   handleOpenDropDown = (e) => {
+    console.log(e)
     this.setState({
       anchorEl: e.currentTarget,
       iconClicked: true
@@ -657,15 +659,15 @@ class MaterialUiPhoneNumber extends React.Component {
           )
             : (
               <>
-                <IconButton
+                <S.IconButtonWrapper
                   className={classes.flagButton}
                   aria-owns={anchorEl ? 'country-menu' : null}
                   aria-label="Select country"
                   onClick={this.handleOpenDropDown}
                   aria-haspopup
                 >
-                  {Boolean(FlagComponent) && <FlagComponent className="margin" />}
-                </IconButton>
+                  {Boolean(FlagComponent) && <FlagComponent aria-label={`${selectedCountry.name} selected`} className="margin" />}
+                </S.IconButtonWrapper>
 
                 <Menu
                   className={dropdownClass}
@@ -721,6 +723,7 @@ class MaterialUiPhoneNumber extends React.Component {
   render() {
     const {
       formattedNumber, placeholder: statePlaceholder,
+      variant
     } = this.state;
 
     const {
@@ -728,7 +731,7 @@ class MaterialUiPhoneNumber extends React.Component {
       native, defaultCountry, excludeCountries, onlyCountries, preferredCountries,
       dropdownClass, autoFormat, isValid, disableCountryCode,
       disableDropdown, enableLongNumbers, countryCodeEditable, onEnterKeyPress,
-      isModernBrowser, classes, keys, localization, placeholder, regions, onChange,
+      isModernBrowser, classes, keys, localization, placeholder, onChange,
       value,
       // end placeholder props
       inputClass, error, InputProps,
@@ -750,6 +753,7 @@ class MaterialUiPhoneNumber extends React.Component {
         onBlur={this.handleInputBlur}
         onKeyDown={this.handleInputKeyDown}
         type="tel"
+        variant={variant}
         InputProps={{
           ...dropdownProps,
           ...InputProps,
@@ -788,10 +792,6 @@ MaterialUiPhoneNumber.propTypes = {
   enableLongNumbers: PropTypes.bool,
   countryCodeEditable: PropTypes.bool,
 
-  regions: PropTypes.oneOfType([
-    PropTypes.string,
-    PropTypes.arrayOf(PropTypes.string),
-  ]),
 
   localization: PropTypes.object,
 
@@ -817,7 +817,7 @@ MaterialUiPhoneNumber.defaultProps = {
   placeholder: '+1 (702) 123-4567',
   disabled: false,
   error: false,
-  variant: 'standard',
+  variant: 'outlined',
   native: false,
 
   inputClass: '',
@@ -830,7 +830,6 @@ MaterialUiPhoneNumber.defaultProps = {
   enableLongNumbers: false,
   countryCodeEditable: true,
 
-  regions: '',
 
   localization: {},
 
