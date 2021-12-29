@@ -539,7 +539,6 @@ class MaterialUiPhoneNumber extends React.Component {
   }
 
   handleOpenDropDown = (e) => {
-    console.log(e)
     this.setState({
       anchorEl: e.currentTarget,
       iconClicked: true
@@ -667,6 +666,7 @@ class MaterialUiPhoneNumber extends React.Component {
                   aria-haspopup
                 >
                   {Boolean(FlagComponent) && <FlagComponent aria-label={`${selectedCountry.name} selected`} className="margin" />}
+                  {this.state.iconClicked ?  <S.ExpandLessIconWrapper /> : <S.ExpandMoreIconWrapper onClick={this.handleOpenDropDown} />}
                 </S.IconButtonWrapper>
 
                 <Menu
@@ -712,7 +712,6 @@ class MaterialUiPhoneNumber extends React.Component {
                 </Menu>
               </>
             )}
-            {this.state.iconClicked ?  <S.ExpandLessIconWrapper /> : <S.ExpandMoreIconWrapper onClick={this.handleOpenDropDown} />}
         </InputAdornment>
       ),
     };

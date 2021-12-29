@@ -9,6 +9,7 @@ export const ExpandLessIconWrapper = styled(ExpandLessIcon)`
 
 export const IconButtonWrapper = styled(IconButton)`
 	padding: 0;
+  width: 50px;
 `;
 
 export const ExpandMoreIconWrapper = styled(ExpandMoreIcon)`
