@@ -661,11 +661,11 @@ class MaterialUiPhoneNumber extends React.Component {
                 <S.IconButtonWrapper
                   className={classes.flagButton}
                   aria-owns={anchorEl ? 'country-menu' : null}
-                  aria-label="Select country"
+                  aria-label={`You can change your country, but ${selectedCountry.name} is currently selected`}
                   onClick={this.handleOpenDropDown}
                   aria-haspopup
                 >
-                  {Boolean(FlagComponent) && <FlagComponent aria-label={`${selectedCountry.name} selected`} className="margin" />}
+                  {Boolean(FlagComponent) && <FlagComponent  className="margin" />}
                   {this.state.iconClicked ?  <S.ExpandLessIconWrapper /> : <S.ExpandMoreIconWrapper onClick={this.handleOpenDropDown} />}
                 </S.IconButtonWrapper>
 
