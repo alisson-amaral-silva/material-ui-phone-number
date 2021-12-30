@@ -2,7 +2,7 @@
 // [
 //    Country name,
 //    Regions,
-//    code code,
+//    iso2 iso2,
 //    International dial code,
 //    Format (if available),
 //    Order (if >1 country with same dial code),
@@ -1354,27 +1354,27 @@ const rawAllCountries = [
 
 const allCountryCodes = {};
 
-function addCountryCode(code, dialCode, priority) {
+function addCountryCode(iso2, dialCode, priority) {
   if (!(dialCode in allCountryCodes)) {
     allCountryCodes[dialCode] = [];
   }
   const index = priority || 0;
-  allCountryCodes[dialCode][index] = code;
+  allCountryCodes[dialCode][index] = iso2;
 }
 
 const allCountries = [].concat(...rawAllCountries.map((country) => {
-  const [name, code, dialCode, format, priority] = country;
+  const [name, iso2, dialCode, format, priority] = country;
 
   const countryItem = {
     name,
-    code,
+    iso2,
     dialCode,
     priority,
     format: format || undefined
   };
 
   addCountryCode(
-    countryItem.code,
+    countryItem.iso2,
     countryItem.dialCode
   );
 

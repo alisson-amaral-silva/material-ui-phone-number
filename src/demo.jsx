@@ -92,6 +92,14 @@ export default render(
         label="Phone number"
         countryList={mockItems}
       />
+
+      <p>Error state</p>
+      <MaterialUiPhoneNumber
+        defaultCountry="ar"
+        label="Phone number"
+        error={true}
+        countryList={mockItems}
+      />
     </div>
   </div>,
   document.getElementById('root'),

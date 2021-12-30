@@ -1,18 +1,18 @@
 export default [
   {
-    code: 'al',
+    iso2: 'al',
     dialCode: '355',
     format: '+... .........',
     name: 'Albania'
   },
   {
-    code: "ar",
+    iso2: "ar",
     dialCode: "54",
     format: "+.. (..) ........",
     name: "Argentina"
   },
   {
-    code: "au",
+    iso2: "au",
     dialCode: "61",
     format: "+.. ... ... ...",
     name: "Australia",
