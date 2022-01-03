@@ -123,10 +123,53 @@ function handleOnChange(value) {
 </table>
 
 ```jsx
-<MuiPhoneInput
-  onlyCountries=['de', 'es']
-  localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
-/>
+  <MuiPhoneInput
+    onlyCountries={['de', 'es']}
+    localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
+  />
+```
+
+<br>
+
+You can check the current supported countries over [here](https://github.com/alisson-amaral-silva/material-ui-phone-number/blob/master/src/country_data.js)
+
+<br>
+
+If the country that you want does not have on the default country list, you can also use your own custom list
+
+## Example
+
+```jsx
+    <MaterialUiPhoneNumber
+      defaultCountry="ar"
+      label="Phone number"
+      countryList={customList}
+    />
+```
+
+Country List example
+
+```js
+export default [
+  {
+    iso2: 'al',
+    dialCode: '355',
+    format: '+... .........',
+    name: 'Albania'
+  },
+  {
+    iso2: "ar",
+    dialCode: "54",
+    format: "+.. (..) ........",
+    name: "Argentina"
+  },
+  {
+    iso2: "au",
+    dialCode: "61",
+    format: "+.. ... ... ...",
+    name: "Australia",
+  }
+]
 ```
 
 ### Supported events
