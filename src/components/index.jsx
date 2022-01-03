@@ -48,7 +48,7 @@ const styles = () => ({
   },
 });
 
-class MaterialUiPhoneNumber extends React.Component {
+class MaterialUiPhoneNumberTextField extends React.Component {
   flags = {};
 
   guessSelectedCountry = memoize((inputNumber, onlyCountries, defaultCountry) => {
@@ -763,7 +763,7 @@ class MaterialUiPhoneNumber extends React.Component {
   }
 }
 
-MaterialUiPhoneNumber.propTypes = {
+MaterialUiPhoneNumberTextField.propTypes = {
   classes: PropTypes.object,
 
   excludeCountries: PropTypes.arrayOf(PropTypes.string),
@@ -806,7 +806,7 @@ MaterialUiPhoneNumber.propTypes = {
   keys: PropTypes.object,
 };
 
-MaterialUiPhoneNumber.defaultProps = {
+MaterialUiPhoneNumberTextField.defaultProps = {
   excludeCountries: [],
   onlyCountries: [],
   countryList: [],
@@ -851,6 +851,6 @@ MaterialUiPhoneNumber.defaultProps = {
   },
 };
 
-MaterialUiPhoneNumber.displayName = 'MuiPhoneNumber';
+MaterialUiPhoneNumberTextField.displayName = 'MuiPhoneNumber';
 
-export default withStyles(styles)(MaterialUiPhoneNumber);
+export default withStyles(styles)(MaterialUiPhoneNumberTextField);

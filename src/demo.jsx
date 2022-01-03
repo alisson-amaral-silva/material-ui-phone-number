@@ -1,6 +1,6 @@
 import React from 'react';
 import { render } from 'react-dom';
-import MaterialUiPhoneNumber from './index';
+import MaterialUiPhoneNumberTextField from './index';
 import mockItems from './mock'
 
 class ChangeDemo extends React.Component {
@@ -23,7 +23,7 @@ class ChangeDemo extends React.Component {
 
         <br />
 
-        <MaterialUiPhoneNumber
+        <MaterialUiPhoneNumberTextField
           defaultCountry="it"
           preferredCountries={['it', 'se']}
           sx={{marginTop: '1rem'}}
@@ -42,19 +42,19 @@ export default render(
     <div style={{ display: 'inline-block', verticalAlign: 'top' }}>
       <p>v1.1.0</p>
       <p>Exclude countries (usa, canada)</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         defaultCountry="no"
         label="Phone number"
         excludeCountries={['us', 'ca']}
       />
       <p>Only countries</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         defaultCountry="gb"
         onlyCountries={['gb', 'es']}
         label="Phone number"
       />
       <p>Preferred countries</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         defaultCountry="it"
         preferredCountries={['it', 'se']}
         label="Phone number"
@@ -62,7 +62,7 @@ export default render(
       <p>onChange</p>
       <ChangeDemo />
       <p>Native</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         defaultCountry="it"
         preferredCountries={['it', 'se']}
         native
@@ -73,7 +73,7 @@ export default render(
     <div style={{ display: 'inline-block', marginLeft: '40px' }}>
       <p>v2</p>
       <p>Auto country detect by value</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         value="+3802343252"
         label="Phone number"
       />
@@ -87,14 +87,14 @@ export default render(
     >
 
       <p>Custom list</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         defaultCountry="ar"
         label="Phone number"
         countryList={mockItems}
       />
 
       <p>Error state</p>
-      <MaterialUiPhoneNumber
+      <MaterialUiPhoneNumberTextField
         defaultCountry="ar"
         label="Phone number"
         error={true}

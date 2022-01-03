@@ -1,6 +1,6 @@
-import MaterialUiPhoneNumber from './components/index';
+import MaterialUiPhoneNumberTextField from './components/index';
 
-export default MaterialUiPhoneNumber;
+export default MaterialUiPhoneNumberTextField;
 
 /* eslint-disable */
 if (__DEV__) require('./demo.jsx');

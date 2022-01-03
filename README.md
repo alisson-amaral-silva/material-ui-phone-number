@@ -140,7 +140,7 @@ If the country that you want does not have on the default country list, you can 
 ## Example
 
 ```jsx
-    <MaterialUiPhoneNumber
+    <MaterialUiPhoneNumberTextField
       defaultCountry="ar"
       label="Phone number"
       countryList={customList}
