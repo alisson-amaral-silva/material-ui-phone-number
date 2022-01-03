@@ -61,6 +61,21 @@ function handleOnChange(value) {
     <td> country codes to be at the top </td>
     <td> ['cu','cw','kz'] </td>
   </tr>
+    <tr>
+    <td> countryList </td>
+    <td> array </td>
+    <td> custom array of countries </td>
+    <td>
+    [
+      {
+        iso2: 'al',
+        dialCode: '355',
+        format: '+... .........',
+        name: 'Albania'
+      }
+    ]
+</td>
+  </tr>
   <tr>
     <td> defaultCountry </td>
     <td> string </td>
