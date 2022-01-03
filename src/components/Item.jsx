@@ -27,7 +27,7 @@ class Item extends React.PureComponent {
       );
     }
 
-    const FlagComponent = Flags[iso2.toUpperCase()];
+    const FlagComponent = Flags[String(iso2).toUpperCase()];
 
     return (
       <MenuItem

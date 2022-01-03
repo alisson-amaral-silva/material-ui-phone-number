@@ -1,11 +1,11 @@
 # material-ui-phone-number
-Highly customizable phone input component with auto formatting. Based on the wonderful [react-phone-input-2](https://github.com/bl00mber/react-phone-input-2) package.
+Highly customizable phone input component with auto formatting. Based on the wonderful [react-phone-input-2](https://github.com/alexplumb/material-ui-phone-number) package.
 
 It looks like this, but in Material Design:
 
 ![alt tag](https://media.giphy.com/media/l378A8qFNzgiuPUre/giphy.gif)
 
-Uses @material-ui/core/TextField for rendering the phone input
+Uses @mui/material/TextField for rendering the phone input
 
 ## Installation
 
@@ -85,16 +85,6 @@ function handleOnChange(value) {
     <td colspan="2"> on/off auto formatting, true by default </td>
   </tr>
   <tr>
-    <td> disableAreaCodes </td>
-    <td> bool </td>
-    <td colspan="2"> disable local codes for all countries </td>
-  </tr>
-  <tr>
-    <td> disableCountryCode </td>
-    <td> bool </td>
-    <td colspan="2"> false by default </td>
-  </tr>
-  <tr>
     <td> disableDropdown </td>
     <td> bool </td>
     <td colspan="2"> false by default </td>
@@ -115,55 +105,9 @@ function handleOnChange(value) {
   </tr>
 
   <tr>
-    <td colspan="4">See TextField API for possible values https://material-ui.com/api/text-field/</td>
+    <td colspan="4">See TextField API for possible values https://mui.com/api/text-field/</td>
   </tr>
 </table>
-
-### Regions
-
-<table>
-  <tr>
-    <th> Name </th>
-    <th> Type </th>
-    <th> Description </th>
-  </tr>
-  <tr>
-    <td> regions </td>
-    <td> array/string </td>
-    <td> to only show codes from selected regions </td>
-  </tr>
-</table>
-
-<table>
-  <tr>
-    <th> Regions </th>
-  </tr>
-  <tr>
-    <td> ['america', 'europe', 'asia', 'oceania', 'africa'] </td>
-  </tr>
-  <tr>
-    <th> Subregions </th>
-  </tr>
-  <tr>
-    <td> ['north-america', 'south-america', 'central-america', 'carribean', 'european-union', 'ex-ussr', 'middle-east', 'north-africa'] </td>
-  </tr>
-</table>
-
-Regions selected: {'europe'}
-```jsx
-<MuiPhoneInput
-  defaultCountry='it'
-  regions={'europe'}
-/>
-```
-
-Regions selected: {['north-america', 'carribean']}
-```jsx
-<MuiPhoneInput
-  defaultCountry='ca'
-  regions={['north-america', 'carribean']}
-/>
-```
 
 ### Localization
 
@@ -179,10 +123,53 @@ Regions selected: {['north-america', 'carribean']}
 </table>
 
 ```jsx
-<MuiPhoneInput
-  onlyCountries=['de', 'es']
-  localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
-/>
+  <MuiPhoneInput
+    onlyCountries={['de', 'es']}
+    localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
+  />
+```
+
+<br>
+
+You can check the current supported countries over [here](https://github.com/alisson-amaral-silva/material-ui-phone-number/blob/master/src/country_data.js)
+
+<br>
+
+If the country that you want does not have on the default country list, you can also use your own custom list
+
+## Example
+
+```jsx
+    <MaterialUiPhoneNumber
+      defaultCountry="ar"
+      label="Phone number"
+      countryList={customList}
+    />
+```
+
+Country List example
+
+```js
+export default [
+  {
+    iso2: 'al',
+    dialCode: '355',
+    format: '+... .........',
+    name: 'Albania'
+  },
+  {
+    iso2: "ar",
+    dialCode: "54",
+    format: "+.. (..) ........",
+    name: "Argentina"
+  },
+  {
+    iso2: "au",
+    dialCode: "61",
+    format: "+.. ... ... ...",
+    name: "Australia",
+  }
+]
 ```
 
 ### Supported events
@@ -218,6 +205,8 @@ Country data object not returns from onKeyDown event
 </table>
 
 ## License
+
+Based on [material-ui-phone-number](https://github.com/alexplumb/material-ui-phone-number)
 
 Based on [react-phone-input-2](https://github.com/bl00mber/react-phone-input-2)
 
