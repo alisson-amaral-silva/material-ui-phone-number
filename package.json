@@ -1,5 +1,5 @@
 {
-  "name": "@alisson-amaral/material-ui-phone-number-text-field",
+  "name": "material-ui-phone-number-text-field",
   "version": "1.0.0",
   "description": "A material-ui react component to format phone numbers. Based on react-phone-input-2",
   "main": "dist/index.js",
