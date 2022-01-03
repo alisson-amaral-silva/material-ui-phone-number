@@ -8,7 +8,7 @@ type CountryList = {
   name: string
 }
 
-export type MuiPhoneNumberProps = TextFieldProps & {
+export type MaterialUiPhoneNumberTextFieldProps = TextFieldProps & {
   autoFormat?: boolean;
   classes?: any;
   countryCodeEditable?: boolean;
@@ -29,6 +29,6 @@ export type MuiPhoneNumberProps = TextFieldProps & {
   regions?: [string] | string;
 };
 
-declare const MuiPhoneNumber: React.FC<MuiPhoneNumberProps>;
+declare const MaterialUiPhoneNumberTextField: React.FC<MaterialUiPhoneNumberTextFieldProps>;
 
-export default MuiPhoneNumber;
+export default MaterialUiPhoneNumberTextField;

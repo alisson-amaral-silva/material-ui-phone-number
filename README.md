@@ -10,16 +10,16 @@ Uses @mui/material/TextField for rendering the phone input
 ## Installation
 
 ```shell-script
-npm install material-ui-phone-number --save
+npm install @alisson-amaral/material-ui-phone-number-text-field --save
 ```
 
 ## Usage
 
 ```jsx
-import MuiPhoneNumber from 'material-ui-phone-number';
+import MaterialUiPhoneNumberTextField from '@alisson-amaral/material-ui-phone-number-text-field';
 
 React.render(
-  <MuiPhoneNumber defaultCountry={'us'} onChange={handleOnChange}/>,
+  <MaterialUiPhoneNumberTextField defaultCountry={'us'} onChange={handleOnChange}/>,
   document.getElementById('root')
 );
 ```
