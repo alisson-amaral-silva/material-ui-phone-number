@@ -138,7 +138,7 @@ function handleOnChange(value) {
 </table>
 
 ```jsx
-  <MuiPhoneInput
+  <MaterialUiPhoneNumberTextField
     onlyCountries={['de', 'es']}
     localization={{'Germany': 'Deutschland', 'Spain': 'España'}}
   />
