@@ -1,4 +1,5 @@
-# material-ui-phone-number
+# material-ui-phone-number-text-field
+
 Highly customizable phone input component with auto formatting. Based on the wonderful [react-phone-input-2](https://github.com/alexplumb/material-ui-phone-number) package.
 
 It looks like this, but in Material Design:
