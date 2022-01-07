@@ -254,19 +254,6 @@ class MaterialUiPhoneNumberTextField extends React.Component {
     return formattedNumber;
   }
 
-  // Put the cursor to the end of the input (usually after a focus event)
-  cursorToEnd = () => {
-    const { isModernBrowser } = this.props;
-
-    const input = this.inputRef;
-    if (input) {
-      input.focus();
-      if (isModernBrowser) {
-        const len = input.value.length;
-        input.setSelectionRange(len, len);
-      }
-    }
-  }
 
   getElement = (index) => this.flags[`flag_no_${index}`]
 
@@ -412,7 +399,6 @@ class MaterialUiPhoneNumberTextField extends React.Component {
       formattedNumber: newFormattedNumber,
       iconClicked: false
     }, () => {
-      this.cursorToEnd();
       if (onChange) {
         onChange(newFormattedNumber, this.getCountryData());
       }
@@ -428,7 +414,7 @@ class MaterialUiPhoneNumberTextField extends React.Component {
       if (this.inputRef.value === '+' && selectedCountry && !disableCountryCode) {
         this.setState({
           formattedNumber: `+${selectedCountry.dialCode}`,
-        }, () => setTimeout(this.cursorToEnd, 10));
+        });
       }
     }
 
@@ -438,7 +424,6 @@ class MaterialUiPhoneNumberTextField extends React.Component {
       onFocus(e, this.getCountryData());
     }
 
-    setTimeout(this.cursorToEnd, 10);
   }
 
   handleInputBlur = (e) => {
@@ -516,7 +501,7 @@ class MaterialUiPhoneNumberTextField extends React.Component {
       case keys.ESC:
         this.setState({
           anchorEl: null,
-        }, this.cursorToEnd);
+        });
         break;
       default:
         if ((e.which >= keys.A && e.which <= keys.Z) || e.which === keys.SPACE) {
@@ -691,8 +676,6 @@ class MaterialUiPhoneNumberTextField extends React.Component {
                       className={classes.flagIcon}
                     />
                   ))}
-
-                  {!!preferredCountries.length && <Divider />}
 
                   {map(onlyCountries, (country, index) => (
                     <Item
