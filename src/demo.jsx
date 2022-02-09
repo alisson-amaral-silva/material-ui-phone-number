@@ -44,6 +44,7 @@ export default render(
       <p>Exclude countries (usa, canada)</p>
       <MaterialUiPhoneNumberTextField
         defaultCountry="no"
+        preferredCountries={['no']}
         label="Phone number"
         excludeCountries={['us', 'ca']}
       />
@@ -89,6 +90,7 @@ export default render(
       <p>Custom list</p>
       <MaterialUiPhoneNumberTextField
         defaultCountry="ar"
+        preferredCountries={['ar','br', 'us']}
         label="Phone number"
         countryList={mockItems}
       />

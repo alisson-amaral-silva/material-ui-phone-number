@@ -651,7 +651,7 @@ class MaterialUiPhoneNumberTextField extends React.Component {
                   aria-haspopup
                 >
                   {Boolean(FlagComponent) && <FlagComponent  className="margin" />}
-                  {this.state.iconClicked ?  <S.ExpandLessIconWrapper /> : <S.ExpandMoreIconWrapper onClick={this.handleOpenDropDown} />}
+                  {this.state.iconClicked ?  <S.ExpandLessIconWrapper /> : <S.ExpandMoreIconWrapper  />}
                 </S.IconButtonWrapper>
 
                 <Menu
@@ -710,7 +710,7 @@ class MaterialUiPhoneNumberTextField extends React.Component {
 
     const {
       // start placeholder props
-      native, defaultCountry, excludeCountries, onlyCountries, preferredCountries,
+      native, defaultCountry, excludeCountries,countryList, onlyCountries, preferredCountries,
       dropdownClass, autoFormat, isValid, disableCountryCode,
       disableDropdown, enableLongNumbers, countryCodeEditable, onEnterKeyPress,
       isModernBrowser, classes, keys, localization, placeholder, onChange,

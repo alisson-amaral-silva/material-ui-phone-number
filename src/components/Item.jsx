@@ -55,7 +55,10 @@ class Item extends React.PureComponent {
 
 Item.propTypes = {
   name: PropTypes.string.isRequired,
-  iso2: PropTypes.string.isRequired,
+  iso2: PropTypes.oneOfType([
+    PropTypes.string,
+    PropTypes.array
+  ]).isRequired,
   dialCode: PropTypes.string.isRequired,
   itemRef: PropTypes.func.isRequired,
   localization: PropTypes.string,
